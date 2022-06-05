@@ -15,8 +15,9 @@ const createDate = (param, position) => {
   }
   tempDates.sort();
 
-  if (position === undefined) return tempDates.join("-");
-  else return new Date(param[position]).getTime() / 1000;
+  if (position === undefined || position + 1 > dates.length)
+    return tempDates.join("-");
+  else return (new Date(param[position]).getTime() / 1000).toString();
 };
 
 // ! JANGAN DIMODIFIKASI
